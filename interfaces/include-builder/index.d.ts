@@ -1,5 +1,5 @@
 export interface IOptions {
   firstLevel?: boolean
   aliases?: Array<string>
-  overwrite?: Record<string, any>
+  assign?: Record<string, any>
 }

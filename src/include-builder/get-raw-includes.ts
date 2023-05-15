@@ -60,10 +60,10 @@ export default function <M extends sequelize.Model>(model: types.TModel<M>, opti
     }
   }
 
-  if (options.overwrite) {
-    for (const includeAlias in options.overwrite) {
-      if (options.overwrite.hasOwnProperty(includeAlias) && rawIncludes.hasOwnProperty(includeAlias)) {
-        rawIncludes[includeAlias] = options.overwrite[includeAlias]
+  if (options.assign) {
+    for (const includeAlias in options.assign) {
+      if (options.assign.hasOwnProperty(includeAlias) && rawIncludes.hasOwnProperty(includeAlias)) {
+        Object.assign(rawIncludes[includeAlias], options.assign[includeAlias])
       }
     }
   }
