@@ -1,10 +1,11 @@
 {
   "name": "@risecorejs/adapters",
-  "version": "1.1.2",
+  "version": "1.0.0",
   "description": "",
   "keywords": [
     "sequelize",
-    "express"
+    "@risecorejs/include-builder",
+    "@risecorejs/order-builder"
   ],
   "main": "dist/index.js",
   "scripts": {
