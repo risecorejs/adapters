@@ -1,9 +1,6 @@
-import * as sequelize from 'sequelize'
-
 import * as interfaces from '../../interfaces/order-builder'
-import * as types from '../../types'
 
-export default function <M extends sequelize.Model>(model: types.TModel<M>, options: interfaces.IOptions = {}) {
+export default function (model: any, options: interfaces.IOptions = {}) {
   const rawOrders: Record<string, any> = {}
 
   const rawAttributes = model.getAttributes()

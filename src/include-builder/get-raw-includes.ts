@@ -1,11 +1,8 @@
-import * as sequelize from 'sequelize'
-
 import fillingRawIncludes from './utils/filling-raw-includes'
 
 import * as interfaces from '../../interfaces/include-builder'
-import * as types from '../../types'
 
-export default function <M extends sequelize.Model>(model: types.TModel<M>, options: interfaces.IOptions = {}) {
+export default function (model: any, options: interfaces.IOptions = {}) {
   const rawIncludes: Record<string, any> = {}
 
   fillingRawIncludes(model, rawIncludes, {
