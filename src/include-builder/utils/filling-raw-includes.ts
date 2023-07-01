@@ -21,7 +21,7 @@ export default function fillingRawIncludes(
         as
       }
 
-      if (!options.firstLevel && options.aliases?.includes(includeAlias)) {
+      if (!options.firstLevel && (prevIncludeAlias ? options.aliases?.includes(prevIncludeAlias) : true)) {
         fillingRawIncludes(model.associations[associationKey].target, rawIncludes, options, includeAlias, model)
       }
     }
