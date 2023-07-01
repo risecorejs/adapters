@@ -6,7 +6,8 @@ export default function (model: any, options: interfaces.IOptions = {}) {
   const rawIncludes: Record<string, any> = {}
 
   fillingRawIncludes(model, rawIncludes, {
-    firstLevel: options.firstLevel ?? true
+    firstLevel: options.firstLevel ?? true,
+    aliases: options.aliases
   })
 
   if (options.aliases?.length) {

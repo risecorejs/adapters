@@ -3,7 +3,7 @@ import * as interfaces from '../../../interfaces/include-builder'
 export default function fillingRawIncludes(
   model: any,
   rawIncludes: Record<string, any>,
-  options: Omit<interfaces.IOptions, 'aliases' | 'overwrite'>,
+  options: Omit<interfaces.IOptions,  'overwrite'>,
   prevIncludeAlias?: string,
   prevModel?: any
 ) {
@@ -21,7 +21,7 @@ export default function fillingRawIncludes(
         as
       }
 
-      if (!options.firstLevel) {
+      if (!options.firstLevel && options.aliases?.includes(includeAlias)) {
         fillingRawIncludes(model.associations[associationKey].target, rawIncludes, options, includeAlias, model)
       }
     }
